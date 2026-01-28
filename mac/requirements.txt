@@ -1,3 +1,4 @@
-carla
 opencv-python
 numpy
+requests
+ultralytics
