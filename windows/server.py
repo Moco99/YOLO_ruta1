@@ -8,6 +8,29 @@ client = carla.Client("localhost", 2000)
 client.set_timeout(10.0)
 world = client.get_world()
 
+
+camera = None  # referencia global
+
+@app.post("/camera/set")
+def set_camera(data: dict):
+    global camera
+
+    transform = carla.Transform(
+        carla.Location(
+            x=data["x"],
+            y=data["y"],
+            z=data["z"]
+        ),
+        carla.Rotation(
+            pitch=data["pitch"],
+            yaw=data["yaw"],
+            roll=0
+        )
+    )
+
+    camera.set_transform(transform)
+    return {"ok": True}
+
 @app.post("/spawn_vehicles")
 def spawn_vehicles(n: int = 20):
     blueprints = world.get_blueprint_library().filter("vehicle.*")
