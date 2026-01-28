@@ -2,3 +2,5 @@ carla==0.9.14
 flask
 opencv-python
 numpy
+fastapi
+uvicorn
