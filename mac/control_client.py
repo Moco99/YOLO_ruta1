@@ -1,10 +1,15 @@
+import os
 import requests
+from dotenv import load_dotenv
 
-WINDOWS_IP = "100.x.x.x"  # Tailscale
+load_dotenv()
+IP = os.getenv("IP_WINDOWS")
+BASE = f"http://{IP}:8000"
 
-# Aparecer autos
-r = requests.post(f"http://{WINDOWS_IP}:8000/spawn_vehicles?n=30")
-print(r.json())
 
-# Semáforo en verde
-requests.post(f"http://{WINDOWS_IP}:8000/traffic_lights/green")
+# spaw de autos
+requests.post(f"{BASE}/spawn_vehicles?n=30")
+
+# semaforos (luces)
+requests.post(f"{BASE}/traffic/green")
+# requests.post(f"{BASE}/traffic/red")
