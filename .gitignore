@@ -7,7 +7,7 @@ __pycache__/
 # Virtual environments
 carla_env/
 venv/
-.env/
+.env
 
 # OS
 .DS_Store
