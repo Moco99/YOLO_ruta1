@@ -3,6 +3,8 @@ import numpy as np
 import cv2
 from flask import Flask, Response
 
+# como ya mencione en server.py windows solo sera un servidor para CARLA y stremear la camara, aqui hacemos la parte de stremear la camara 
+
 app = Flask(__name__)
 frame = None
 

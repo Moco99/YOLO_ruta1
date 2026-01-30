@@ -27,3 +27,7 @@ Mac:
 1. Windows: arrancar CARLA
 2. Windows: ejecutar stream de cámara
 3. Mac: conectar, ver video y controlar tráfico
+
+Recuerden hacer pip install -r requirements.txt dentro de cada carpeta respectiva dependiendo si estan en el servidor o en el controlador, si estan en el servidor solo instalen el requirements.txt que esta en /windows y si son el controlador solo el que esta en /mac.
+
+Vuelvo a repetir, no es necesario que sea macOS pero yo lo llame asi por conveniencia personal, bien podria ser /server y /controlador :)
